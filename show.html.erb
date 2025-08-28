@@ -1,0 +1,44 @@
+<%=stylesheet_link_tag "show", :media => "all" %>
+
+<section id="first-blockshow">
+    <div class="showtitle-container">
+        <h1 class="showtitle">space image</h1>
+    </div>
+</section>
+
+<section id="second-block"> 
+    <div class="room-container">
+        <div class="room-image">
+            <%= image_tag @room.image_url, size: "500x400" if @room.image? %>
+        </div>
+
+        <div class="room-show">
+            <div class="roomitem-container">
+                <div class="room-tag">
+                    <% @room.tags.each do |tag| %>
+                        <span><%= tag.name %></span>
+                    <% end %>
+                </div>
+                <div class="room-item">
+                    <%= @room.genre %>
+                    <%=@room.theme %>
+                    <%= @room.place %>
+                    <%= @room.iteme %>
+                </div>
+                <div class="room-about">
+                    <%= @room.about %>
+                </div>
+                <div class="room-created">
+                    <%= @room.created_at %>
+                </div>
+                <br>
+                    <%= @room.user.email %>
+                
+            </div>    
+    </div>         
+</div>
+
+<div class="text">
+    <%= link_to "編集する", edit_room_path(@room.id),class: "roomindex-link" %>
+    <%= link_to "Room一覧に戻る", rooms_path ,class: "roomindex-link"%>
+</div>
