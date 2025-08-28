@@ -1,0 +1,75 @@
+<%=stylesheet_link_tag "index", :media => "all" %>
+
+<section id="first-block">
+   <div class="title-container">
+      <p class="title">pictures</p>
+      <h3>いつもの場所をお気に入りのspeaceへしませんか</h3>
+      <br>
+      <%= link_to "新規投稿へ", new_room_path, class: "roomnews-link" %>
+   </div>
+      </section>
+
+<section id="second-block"> 
+   <div class="rooms-container">
+         <% @rooms.each do |t| %>
+            <div class="room-item">
+               <div class="photo">
+                  <%= image_tag t.image_url, size: "250x200" if t.image? %>
+               </div>
+
+               
+                  <div class="tag">
+                     <% t.tags.each do |tag| %>
+                        <span><%= tag.name %></span>
+                     <% end %>
+                  </div>
+
+               <br>
+                  <%= t.genre %>
+                  <%= t.theme %>
+                  <%= t.place %>
+                  <%= t.iteme %>
+               <br> 
+                  <%= t.about %>
+               <br>  
+                  <%= t.created_at %>
+               <br>  
+                  <%= t.user.email %>
+               
+               <br> 
+                  <div class=botan>
+                     <%= link_to "詳細へ", room_path(t.id),class: "roomshows-link" %>
+                     <%= link_to "編集する", edit_room_path(t.id), class: "roomedits-link" %>
+                     <%= button_to "削除する", room_path(t.id), method: :delete, class: "roomdelete-link" %>
+                  </div>
+            </div>
+         <% end %>
+
+   </div>
+</section>
+
+<section id="third-block">
+   <div class="tags-container">
+      <div class=tag-item>
+            <%= form_tag({controller:"rooms",action:"index"}, method: :get) do %>
+               <% Tag.all.each do |t| %>
+                  <ul>
+                     <li><%= check_box :tag_ids, t.name %><%= t.name %></li>
+                  </ul>
+               <% end %>
+               <%= submit_tag '検索' %>
+
+            <% end %>
+      </div>
+   </div>
+
+   <%= form_tag({controller:"rooms",action:"index"}, method: :get) do %>
+      <%= text_field_tag :tag %>
+      <%= submit_tag 'タグを追加' %>
+   <% end %>
+
+</section>
+
+
+
+
