@@ -1,0 +1,142 @@
+#first-block{
+    width: 100%;
+    height: 700px;
+    background-image: url("first-bsck-2.jpg");
+    background-size: cover;
+    text-align: center;
+    
+}
+
+.title-container{
+    justify-content: center;
+    padding: 30px;
+    
+}
+
+
+
+.title{
+    color: rgb(97, 76, 14);
+    font-size: 10rem;
+}
+
+.h1{
+    color: rgb(65, 35, 0);
+    padding-top:60px;
+    margin: 50px;
+}
+
+.roomnews-link{
+    padding:10px 30px 10px 30px;  
+    color: rgb(255, 255, 255);
+    border-color: rgb(75, 138, 50);
+    background-color: rgba(69, 114, 65, 0.459);
+    font-size: 1.2rem;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+h3{
+    color: rgb(110, 104, 82);
+}
+
+#second-block{
+font-family: 'Comfortaa', cursive;
+font-family: 'M PLUS 1p', sans-serif;
+    background-color: rgb(253, 250, 238);
+    padding:200px 180px 200px 180px;
+
+}
+
+.rooms-container{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: flex-start;  
+    align-items: center;
+    color: rgba(34, 32, 25, 0.829);
+
+    transition-property: background-color, opacity; 
+    transition-duration: 4s;
+    transition-delay: 2s;
+
+    overflow: hidden;
+}
+
+.room-item{
+    display:inline-flex;
+    background: rgba(179, 141, 98, 0.226);
+    flex-direction: column;
+    padding:30px;
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    transition:1s
+    
+}   
+
+.photo{
+    object-fit:cover;
+    
+}
+
+room-item:hover {
+    transform: scale(2);
+}
+
+
+#third-block{
+    background-color: rgb(199, 192, 168);
+    text-align: center;
+    padding: 30px 0px 120px 180px;
+    height: 300px;
+
+}
+
+.tags-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.li{
+    display:inline;
+}
+
+ul{
+    display:inline-flex;
+}
+
+.form{
+    width: 100%;
+}
+.tag-item ul li{
+    float:left;
+    display: inline;
+}
+
+.roomshows-link{
+    margin: 10px;
+    color: rgb(85, 75, 56);
+    font-size: 1.1rem;
+    padding: 5px;
+    padding:5px 10px 5px 10px;  
+    border-color: rgb(219, 55, 27);
+    border-radius: 10px;
+    background-color: rgb(216, 191, 163);
+}
+
+.roomedits-link{
+    color: rgba(34, 32, 25, 0.829);
+
+}
+
+.roomdelete-link{
+    color: rgb(85, 75, 56);
+    font-size: 0.9rem;
+    margin: 10px;
+    background-color: rgb(238, 232, 215);
+    border-color: rgba(206, 190, 155, 0.623);
+
+}
