@@ -1,0 +1,35 @@
+
+.login{
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-right: 180px;
+  padding-left: 180px;
+  color: rgb(80, 53, 19);
+  background-color: rgb(255, 250, 232);
+}
+
+.loginform-container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0%;
+  padding: 10px;
+  background-image: url("first-bsck-2.jpg");
+  background-size: cover;
+
+}
+
+
+
+
+.logintext{
+  background-color:rgba(97, 131, 2, 0.233);
+  text-align: center;
+  width: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.field{
+  background-color: rgba(221, 196, 163, 0.473);
+}
