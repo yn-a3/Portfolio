@@ -1,0 +1,71 @@
+<%=stylesheet_link_tag "edit", :media => "all"%>
+
+<section id="first-blockedit">
+    <div class="showtitle-container">
+        <h1 class="showtitle">repost</h1>
+    </div>
+</section>
+
+<div class="secound-blockedit">
+    <%= form_for @room do |f| %>  
+        <div class="room-container">
+            <div class="field">
+                <br>
+                    <%= f.label :genre %>
+                    <%= f.select :genre, 
+                    [["レイアウト", "レイアウト"], 
+                    ["収納", "収納"], 
+                    ["DIY", "DIY"]], include_blank: "選択して下さい" %>
+                <br>
+                    <%= f.label :theme %>
+                    <%= f.select :theme, 
+                    [["ナチュラル", "ナチュラル"], 
+                    ["シンプル", "シンプル"], 
+                    ["モダン", "モダン"], 
+                    ["フェミニン", "フェミニン"]], include_blank: "選択して下さい" %>
+                <br>    
+                    <%= f.label :place %>
+                    <%= f.select :place, 
+                    [["リビング", "リビング"], 
+                    ["キッチン", "キッチン"],
+                    ["壁", "壁"], 
+                    ["ベランダ", "ベランダ"]], include_blank: "選択して下さい" %>
+                <br>
+                    <%= f.label :iteme %>
+                    <%= f.select :iteme, 
+                    [["カラーボックス", "カラーボックス"], 
+                    ["ソファー", "ソファー"], 
+                    ["服", "服"]], include_blank: "選択して下さい" %>
+                <br>
+                <%= f.label :about %>
+                <%= f.text_area :about, :size => "30x2" %>
+            
+                <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+                    <div class='form-check'>
+                        <%= tag.label class: 'form-check-label' do %>
+                            <%= tag.check_box class: 'form-check-input' %>
+                            <%= tag.text %>
+                        <% end %>
+                    </div>
+                <% end %>
+
+            </div>
+
+            <div class="image">
+                    <%= f.label :image %>
+                <br>
+                    <%= image_tag @room.image_url, size: "250x200" if @room.image? %>
+                <br>
+                    <%= f.file_field :image %>
+            </div>
+
+        </div>
+        
+        <div class="new">
+            <%= f.submit "更新する", class: "roomnew-link" %>
+            <br>
+            <%= link_to "Room一覧に戻る", rooms_path , class: "roomindex-link"%>
+
+        </div>   
+    <% end %>
+</div>   
