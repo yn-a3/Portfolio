@@ -1,0 +1,48 @@
+#second-block{
+    padding:60px; 
+}
+
+.room-container{
+    display:flex;  
+    padding: 50px;
+    margin: 20px 80px 10px 80px;
+    justify-content: center;
+    background-color: rgb(250, 243, 227);
+}
+
+.field{
+    padding:60px;
+    background-color: rgb(245, 240, 220);
+    justify-content: center;
+}
+
+.new{
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.image{
+
+}
+
+.p{
+    text-align: center;
+}
+
+.roomnew-link{
+    padding:10px 30px 10px 30px;  
+    color: rgb(255, 255, 255);
+    border-color: rgb(75, 138, 50);
+    background-color: rgba(69, 114, 65, 0.459);
+    font-size: 1.2rem;
+    border-radius: 10px;
+
+
+} 
+
+.roomindex-link{
+    padding:10px 30px 10px 30px; 
+    font-size: 1.2rem;
+    color: rgb(75, 138, 50);
+}
