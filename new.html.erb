@@ -1,0 +1,120 @@
+<%=stylesheet_link_tag "new", :media => "all" %>
+
+<section id="first-blockshow">
+    <div class="showtitle-container">
+        <h1 class="showtitle">new post</h1>
+    </div>
+</section>
+
+<section id="second-block">
+  <%= form_for @room do |f| %>
+    <div class="room-container">
+
+      <div class="field">
+        <br>
+          <%= f.label :genre %>
+          <%= f.select :genre, 
+          [["レイアウト", "レイアウト"], 
+          ["収納", "収納"], 
+          ["DIY", "DIY"],
+          ["インテリア", "インテリア"], 
+          ["模様替え", "模様替え"], 
+          ["丁寧な暮らし", "丁寧な暮らし"]],
+          include_blank: "選択して下さい" %>
+        
+        <br>
+          <%= f.label :theme %>
+          <%= f.select :theme, 
+          [["ナチュラル", "ナチュラル"], 
+          ["シンプル", "シンプル"], 
+          ["モダン", "モダン"], 
+          ["フェミニン", "フェミニン"],
+          ["ミニマル", "ミニマル"], 
+          ["北欧風", "北欧風"], 
+          ["レトロ", "レトロ"],
+          ["和風", "和風"], 
+          ["カントリー", "カントリー"], 
+          ["和モダン", "和モダン"],
+          ["アウトドア", "アウトドア"], 
+          ["カフェ風", "カフェ風"], 
+          ["モノトーン", "モノトーン"]], 
+          include_blank: "選択して下さい" %>
+
+        <br>
+          <%= f.label :place %>
+          <%= f.select :place, 
+          [["リビング", "リビング"], 
+          ["キッチン", "キッチン"],
+          ["寝室", "寝室"], 
+          ["トイレ", "トイレ"], 
+          ["洗面所", "洗面所"], 
+          ["廊下", "廊下"], 
+          ["壁", "壁"], 
+          ["ベランダ", "ベランダ"],
+          ["ダイニング", "ダイニング"], 
+          ["書斎", "書斎"], 
+          ["玄関", "玄関"],
+          ["和室", "和室"]], 
+          include_blank: "選択して下さい" %>
+
+        <br>
+          <%= f.label :iteme %>
+          <%= f.select :iteme, 
+          [["カラーボックス", "カラーボックス"], 
+          ["ソファー", "ソファー"], 
+          ["服", "服"],
+          ["テーブル", "テーブル"], 
+          ["イス", "イス"],
+          ["ベッド", "ベッド"], 
+          ["すのこ", "すのこ"], 
+          ["棚", "棚"],
+          ["ランプ", "ランプ"], 
+          ["観葉植物", "観葉植物"], 
+          ["ドライフラワー", "ドライフラワー"],
+          ["カーペット", "カーペット"], 
+          ["ラグ", "ラグ"], 
+          ["ミラー", "ミラー"],
+          ["置物・インテリア雑貨", "置物・インテリア雑貨"], 
+          ["カーテン", "カーテン"], 
+          ["クッション", "クッション"]],
+          include_blank: "選択して下さい" %>
+
+        <br>  
+          <%= f.label :about %>
+          <%= f.text_area :about, :size => "30x2" %>
+
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+          <div class='form-check'>
+              <%= tag.label class: 'form-check-label' do %>
+                  <%= tag.check_box class: 'form-check-input' %>
+                  <%= tag.text %>
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="image">
+          <%= f.label :image %>
+        <br>
+          <%= f.file_field :image %>
+      </div>
+
+    </div>
+
+    <div class="new">
+      <%= f.submit "roomを投稿する", class: "roomnew-link"  %>
+      <br>
+      <%= link_to "room一覧に戻る", rooms_path, class: "roomindex-link" %>
+    </div>
+  <% end %>
+
+</section>
+
+<section id="second-block">
+
+
+</section>
+
+
+
+
